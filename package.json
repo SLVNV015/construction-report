@@ -1,0 +1,92 @@
+{
+  "name": "@org/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+      "lint": "eslint .",
+      "lint:fix": "eslint . --fix"
+  },
+  "private": true,
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.0",
+    "@nx/devkit": "22.7.5",
+    "@nx/eslint": "22.7.5",
+    "@nx/eslint-plugin": "22.7.5",
+    "@nx/js": "22.7.5",
+    "@nx/nest": "^22.7.5",
+    "@nx/node": "22.7.5",
+    "@nx/playwright": "22.7.5",
+    "@nx/react": "^22.7.5",
+    "@nx/vite": "22.7.5",
+    "@nx/vitest": "22.7.5",
+    "@nx/web": "22.7.5",
+    "@nx/webpack": "22.7.5",
+    "@playwright/test": "^1.36.0",
+    "@swc-node/register": "1.11.1",
+    "@swc/core": "1.15.8",
+    "@swc/helpers": "0.5.18",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "20.19.9",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "@vitest/coverage-v8": "4.1.7",
+    "@vitest/ui": "4.1.7",
+    "eslint": "~8.57.0",
+    "jiti": "2.4.2",
+    "jsdom": "~22.1.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "nx": "22.7.5",
+    "prettier": "^3.8.1",
+    "tslib": "^2.3.0",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.40.0",
+    "verdaccio": "6.4.0",
+    "vite": "^8.0.0",
+    "vitest": "4.1.7",
+    "webpack-cli": "^5.1.4"
+  },
+  "workspaces": [
+    "packages/*",
+    "api",
+    "api-e2e",
+    "web"
+  ],
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/swagger": "^11.4.4",
+    "@nestjs/typeorm": "^11.0.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "autoprefixer": "^10.5.0",
+    "axios": "^1.16.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "pg": "^8.21.0",
+    "postcss": "^8.5.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "tailwindcss": "^4.3.0",
+    "typeorm": "^1.0.0",
+    "zod": "^4.4.3"
+  }
+}
